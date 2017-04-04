@@ -3,8 +3,15 @@
  */
 'use strict';
 
-var app = require('app');
-var BrowserWindow = require('browser-window');
+// var app = require('electron');
+// var BrowserWindow = require('browser-window');
+const electron = require('electron');
+const path = require('path');
+
+
+// Module to control application life.
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
 
 var mainWindow = null;
 
@@ -14,5 +21,5 @@ app.on('ready', function() {
         width: 800
     });
 
-    mainWindow.loadUrl('file://' + __dirname + '/app/index.html');
+    mainWindow.loadURL('file://' + __dirname + '/app/index.html');
 });
